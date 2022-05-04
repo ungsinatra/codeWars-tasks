@@ -11,3 +11,4 @@ task5 - https://www.codewars.com/kata/525f50e3b73515a6db000b83/train/javascript
 
 
 task10 - https://www.codewars.com/kata/526571aae218b8ee490006f4/train/javascript
+task11 - https://www.codewars.com/kata/5266876b8f4bf2da9b000362/train/javascript
