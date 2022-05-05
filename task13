@@ -1,0 +1,30 @@
+// https://www.codewars.com/kata/59c7e477dcc40500f50005c7/train/javascript
+function isOddHeavy(n) {
+  let res;
+  let isOdd = [];
+  let newArr = n.filter((el) => {
+    if (el % 2 == 0) {
+      return el;
+    } else {
+      isOdd.push(el);
+    }
+  });
+  if (!newArr.length == 0 && isOdd.length) {
+    for (let i = 0; i < newArr.length; i++) {
+      for (let j = 0; j < isOdd.length; j++) {
+        if (newArr[i] > isOdd[j]) {
+          return (res = false);
+        } else if(isOdd[j]){
+          res = true;
+        }
+      }
+    }
+  } else if (isOdd.length == 0) {
+    res = false;
+  } else if (newArr.length == 0) {
+    res = true;
+  }
+
+  return res;
+}
+console.log(isOddHeavy([ 2,2,2]));
