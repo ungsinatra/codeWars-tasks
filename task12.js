@@ -4,29 +4,27 @@ function incrementString(strng) {
   let valuesOfZero = [];
   let strOfString = "";
   let numberOfString = "";
+  
   let result = "";
   let arr = newArr.map((el) => {
     if (!Number(el) && el !== "0") {
-		return (strOfString += el);
+        return (strOfString += el);
     } else if (el === "0") {
-		valuesOfZero.push(el);
-      return (numberOfString += el);
+    return 	valuesOfZero.push(el);
+     
     } else {
       return (numberOfString += el);
     }
   });
-  numberOfString = +numberOfString;
-  if (numberOfString <= 8&&valuesOfZero.length !== 0) {
-    result = `${strOfString}00${numberOfString + 1}`;
-  } else if (numberOfString >= 9 && numberOfString < 98&&valuesOfZero.length !== 0) {
-    result = `${strOfString}0${numberOfString + 1}`;
-  } else if (numberOfString >= 99 && numberOfString < 1000&&valuesOfZero.length == 0) {
-    result = `${strOfString}${numberOfString + 1}`;
-  } else if (valuesOfZero.length === 0) {
-    result = `${strOfString}${numberOfString + 1}`;
-  } else {
-    result = `${strOfString}${numberOfString + 1}`;
+  let corentValuesL = numberOfString.length;
+  valuesOfZero = valuesOfZero.join('');
+  numberOfString = `${((+numberOfString)+1)}`;
+  if(corentValuesL>=numberOfString.length){
+    result = `${strOfString}${valuesOfZero}${numberOfString}`
+  }else{
+    result = `${strOfString}${(valuesOfZero.slice(1))}${numberOfString}`
   }
   return result;
 }
-console.log(incrementString("foobar100"));
+
+console.log(incrementString('foo99'))
