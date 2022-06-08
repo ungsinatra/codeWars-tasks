@@ -1,22 +1,23 @@
 // https://www.codewars.com/kata/555a77eb65dd419534000016/train/javascript
 
-let counter  = 0
 
 function sometimes(fn) {
-	return fn
+	let counter = 0
+	return function(...args){
+		counter++
+		if(counter==4){
+			return "hmm, I don't know!"
+		}
+		if(counter>4 && counter%2==0){
+			return "hmm, I don't know!"
+
+		}
+		return fn(...args)
+	}
 }
 
 function add (a, b) {
-	counter++;
-	if(counter==4){
-		return "hmm, I don't know!"
-	}else{
-		if(counter%2==0 && counter>=4){
 
-		return "hmm, I don't know!"
-	
-		}
-	}
 	
 	return a + b;
 	
