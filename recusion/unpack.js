@@ -1,3 +1,23 @@
+function unpackNotTail(...arr){
+	console.log(`ARR: ${arr}`)
+	let newArr = []
+	for(let i =0;i<arr.length;i++){
+		let correntItem = arr[i];
+		if(Array.isArray(correntItem)){
+			newArr.push(...unpackNotTail(...correntItem))
+			
+		}else{
+			newArr.push(correntItem)
+		}
+	}
+	
+	return newArr
+
+}
+let array = [1,2,[1,23,[1,2]]]
+console.log(unpackNotTail(array))
+
+
 
 let newArr = [];
 function unpack(arr, output) {
