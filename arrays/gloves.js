@@ -9,7 +9,6 @@ function numberOfPairs(gloves)
 		char in objOfGloves? objOfGloves[char]+=1:objOfGloves[char] = 1; 
 	}
 	Object.values(objOfGloves).forEach(el=>{
-		
 		let count = Math.floor(el/2)
 		if(count=>1){
 			res+=count
